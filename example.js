@@ -63,7 +63,7 @@
 // let joinedAnimals = animals.join("---");
 // console.log("joined animals ----> " + joinedAnimals);   
 
-
+/*
 let keyString = 'a string';
 let keyObj = {};
 let keyFunc = function () { };
@@ -122,3 +122,61 @@ if(mergedMap.has(1)) console.log("---->" + mergedMap.get(1));
 
 mergedMap.clear();
 console.log(mergedMap.size);
+*/
+
+let myMap = new Map();
+
+myMap.set(1, 0);
+myMap.set(2, 0);
+myMap.set(3, 0);
+myMap.set(4, 0);
+myMap.set(5, 0);
+myMap.set(6, 0);
+
+// console.log(myMap.get(1));
+
+// let randomRoll = Math.floor(Math.random() * 10) % 6 + 1;
+// console.log("Random roll is : " + randomRoll);
+
+// console.log(typeof(myMap.get(randomRoll)));
+// let increment = myMap.get(randomRoll);
+// increment++;
+// console.log(increment);
+// myMap.set(randomRoll, increment);
+// console.log(myMap.get(randomRoll));
+// console.log(myMap.has(6));
+
+// console.log(myMap.values());
+// while(myMap.values.has)
+
+for (let value of myMap.values()) {
+    console.log(value);
+}
+console.log("--------------------------");
+let index = true;
+
+while (1) {
+    let randomRoll = Math.floor(Math.random() * 10) % 6 + 1;
+    let increment = myMap.get(randomRoll);
+    increment++;
+    myMap.set(randomRoll, increment);
+
+    for (let value of myMap.values()) {
+        if (value == 10) {
+            index = false;
+        }
+    }
+    if (index == false) {
+        break;
+    }
+}
+console.log("----My Map----");
+for (let [key, value] of myMap) {
+    console.log(key + "=" + value);
+}
+
+for (let [key, value] of myMap) {
+    if (value == 10) {
+        console.log(key + "=" + value);
+    }
+}
