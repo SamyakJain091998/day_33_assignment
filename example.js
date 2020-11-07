@@ -124,14 +124,14 @@ mergedMap.clear();
 console.log(mergedMap.size);
 */
 
-let myMap = new Map();
+// let myMap = new Map();
 
-myMap.set(1, 0);
-myMap.set(2, 0);
-myMap.set(3, 0);
-myMap.set(4, 0);
-myMap.set(5, 0);
-myMap.set(6, 0);
+// myMap.set(1, 0);
+// myMap.set(2, 0);
+// myMap.set(3, 0);
+// myMap.set(4, 0);
+// myMap.set(5, 0);
+// myMap.set(6, 0);
 
 // console.log(myMap.get(1));
 
@@ -149,6 +149,7 @@ myMap.set(6, 0);
 // console.log(myMap.values());
 // while(myMap.values.has)
 
+/*
 for (let value of myMap.values()) {
     console.log(value);
 }
@@ -180,3 +181,42 @@ for (let [key, value] of myMap) {
         console.log(key + "=" + value);
     }
 }
+*/
+
+//------------------------------------------------------------------
+
+let myPersonMap = new Map();
+let myMonthMap = new Map();
+let monthArray = new Array();
+
+monthArray.push("January");
+monthArray.push("February");
+monthArray.push("March");
+monthArray.push("April");
+monthArray.push("May");
+monthArray.push("June");
+monthArray.push("July");
+monthArray.push("August");
+monthArray.push("September");
+monthArray.push("October");
+monthArray.push("November");
+monthArray.push("December");
+
+for (let i = 1; i <= 12; i++) {
+    myMonthMap.set(i, monthArray[i]);
+}
+
+for(let i = 1; i<=12; i++){
+    myPersonMap.set(i, new Array());
+}
+
+for (let i = 0; i < 50; i++) {
+    let randomNumber = Math.floor(Math.random() * 100) % 12 + 1;
+    let returnedArray = myPersonMap.get(randomNumber);
+    returnedArray.push("name" + (i + 1));
+}
+
+for(let [key, value] of myPersonMap){
+    console.log(monthArray[key-1] + " ===> " + value);
+}
+
